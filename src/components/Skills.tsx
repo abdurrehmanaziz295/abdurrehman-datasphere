@@ -1,13 +1,13 @@
 
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
-import { Python, Database, Brain, Shield, GitBranch, BarChart3 } from 'lucide-react';
+import { Code2, Database, Brain, Shield, GitBranch, BarChart3 } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
     {
       title: "Programming Languages",
-      icon: <Python className="w-6 h-6" />,
+      icon: <Code2 className="w-6 h-6" />,
       skills: [
         { name: "Python", level: 90 },
         { name: "SQL", level: 75 },
