@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +51,15 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				// Cyberpunk Neon Colors
+				neon: {
+					cyan: 'hsl(var(--neon-cyan))',
+					pink: 'hsl(var(--neon-pink))',
+					purple: 'hsl(var(--neon-purple))',
+					green: 'hsl(var(--neon-green))',
+					orange: 'hsl(var(--neon-orange))',
+					blue: 'hsl(var(--neon-blue))'
 				}
 			},
 			borderRadius: {
@@ -109,6 +117,60 @@ export default {
 				'blink': {
 					'0%, 50%': { borderColor: 'transparent' },
 					'51%, 100%': { borderColor: 'hsl(var(--primary))' }
+				},
+				// Cyberpunk Animations
+				'cyber-pulse': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px hsl(var(--neon-cyan) / 0.5)'
+					},
+					'50%': {
+						boxShadow: '0 0 40px hsl(var(--neon-cyan) / 0.8), 0 0 60px hsl(var(--neon-pink) / 0.3)'
+					}
+				},
+				'matrix-rain': {
+					'0%': {
+						transform: 'translateY(-100vh)',
+						opacity: '1'
+					},
+					'100%': {
+						transform: 'translateY(100vh)',
+						opacity: '0'
+					}
+				},
+				'glitch-text': {
+					'0%, 90%, 100%': {
+						transform: 'translate(0)'
+					},
+					'20%': {
+						transform: 'translate(-2px, 2px)'
+					},
+					'40%': {
+						transform: 'translate(-2px, -2px)'
+					},
+					'60%': {
+						transform: 'translate(2px, 2px)'
+					},
+					'80%': {
+						transform: 'translate(2px, -2px)'
+					}
+				},
+				'neon-flicker': {
+					'0%, 19%, 21%, 23%, 25%, 54%, 56%, 100%': {
+						textShadow: '0 0 10px hsl(var(--neon-cyan)), 0 0 20px hsl(var(--neon-cyan)), 0 0 40px hsl(var(--neon-cyan))'
+					},
+					'20%, 24%, 55%': {
+						textShadow: 'none'
+					}
+				},
+				'cyber-slide': {
+					'0%': {
+						transform: 'translateX(-100%) skewX(-20deg)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateX(0) skewX(0deg)',
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
@@ -119,15 +181,29 @@ export default {
 				'scale-in': 'scale-in 0.6s ease-out',
 				'slide-up': 'slide-up 1s ease-out',
 				'typing': 'typing 3.5s steps(40, end)',
-				'blink': 'blink 1s step-end infinite'
+				'blink': 'blink 1s step-end infinite',
+				// Cyberpunk Animations
+				'cyber-pulse': 'cyber-pulse 2s ease-in-out infinite',
+				'matrix-rain': 'matrix-rain 20s linear infinite',
+				'glitch-text': 'glitch-text 1s ease-in-out infinite',
+				'neon-flicker': 'neon-flicker 3s linear infinite',
+				'cyber-slide': 'cyber-slide 0.8s ease-out'
 			},
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'hero-gradient': 'linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(262 83% 58%) 100%)',
-				'card-gradient': 'linear-gradient(135deg, hsl(222 84% 6% / 0.8) 0%, hsl(222 84% 8% / 0.6) 100%)',
+				'hero-gradient': 'linear-gradient(135deg, hsl(var(--neon-cyan)) 0%, hsl(var(--neon-purple)) 50%, hsl(var(--neon-pink)) 100%)',
+				'card-gradient': 'linear-gradient(135deg, hsl(var(--card) / 0.8) 0%, hsl(var(--card) / 0.6) 100%)',
+				'cyber-grid': `
+					linear-gradient(rgba(0,255,255,0.1) 1px, transparent 1px),
+					linear-gradient(90deg, rgba(0,255,255,0.1) 1px, transparent 1px)
+				`,
+				'neon-glow': 'radial-gradient(circle, hsl(var(--neon-cyan) / 0.3) 0%, transparent 70%)'
+			},
+			backgroundSize: {
+				'grid': '50px 50px'
 			}
 		}
 	},
